@@ -19,12 +19,19 @@ import Premake_Links
 import Premake_BuildOptions
 import Premake_Flags
 
+#defines the link name
+BTD_Name = "BTDSTD"
+
+#defines the include directory
+BTD_INCLUDE_DIR = "BTDSTD2/includes"
+
+#generates the project
 def GeneratePremake():
     premakeCode = ""
 
     #KAR main exe project
     KARProject = PremakeGen.Project()
-    KARProject.name = "BTDSTD2"
+    KARProject.name = BTD_Name
     KARProject.kind = "StaticLib"
     KARProject.language = "C++"
         
@@ -54,7 +61,7 @@ Dep_Vulkan.VMA_INCLUDE_DIR, Dep_Vulkan.VK_BOOTSTRAP_INCLUDE_DIR, Dep_Vulkan.VULK
     premakeCode = premakeCode + Premake_Flags.GenerateFlagsString({"NoRuntimeChecks",
     "MultiProcessorCompile"})
 
-    Premake_BuildOptions.GenerateBuildOptionFlagsString("/utf-8")
+    premakeCode = premakeCode + Premake_BuildOptions.GenerateBuildOptionFlagsString({"/utf-8"})
 
     premakeCode = premakeCode + """
 
