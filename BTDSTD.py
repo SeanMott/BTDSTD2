@@ -20,10 +20,10 @@ import Premake_BuildOptions
 import Premake_Flags
 
 #defines the link name
-BTD_Name = "BTDSTD"
+PROJECT_NAME = "BTDSTD"
 
 #defines the include directory
-BTD_INCLUDE_DIR = "BTDSTD2/includes"
+PROJECT_INCLUDE_DIR = "BTDSTD2/includes"
 
 #generates the project
 def GeneratePremake():
@@ -31,14 +31,14 @@ def GeneratePremake():
 
     #KAR main exe project
     KARProject = PremakeGen.Project()
-    KARProject.name = BTD_Name
+    KARProject.name = PROJECT_NAME
     KARProject.kind = "StaticLib"
     KARProject.language = "C++"
         
     KARProject.location = "BTDSTD2"
     KARProject.desc = "The STD library for Bytes The Dust projects"
 
-    KARProject.binaryOutput = PremakeGen.GenerateDefaultBinaryOutputPath() + "/BTD"
+    KARProject.binaryOutput = PremakeGen.GenerateDefaultBinaryOutputPath() + "/BTDSDK"
 
     premakeCode = premakeCode + KARProject.GenerateProjectHeaderString()
 
