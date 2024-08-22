@@ -15,10 +15,12 @@
     <ClInclude Include="includes\BTDSTD\Logger.hpp">
       <Filter>includes\BTDSTD</Filter>
     </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Time.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Source.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Time.cpp" />
   </ItemGroup>
 </Project>
